@@ -1,8 +1,20 @@
 console.log("jsok");
+//functions
+const bomb = (bombs, totalCell) => {
+  while (bombs.length <= 16) {
+    do {
+      bomb = Math.floor(Math.random() * totalCell + 1);
+    } while (bombs.contain(bomb));
+    {
+      bombs.push = bomb;
+    }
+  }
+};
 //fase 0
 const board = document.querySelector(".board");
 const button = document.querySelector("button");
 const scored = document.getElementById("score");
+let bombs = [];
 let score = "";
 let row = 10;
 let cols = 10;
@@ -16,15 +28,15 @@ button.addEventListener("click", function () {
   for (i = 0; i < cells.length; i++) {
     const cell = cells[i];
     cell.addEventListener("click", function () {
+      //fase 1
       if (cell.classList.contains("active")) {
         return;
       } else {
         cell.classList.add("active");
         console.log(cell.innerText);
         score++;
-        console.log(score);
+        scored.innerText = score;
       }
     });
   }
-  //fase 1
 });
