@@ -18,6 +18,7 @@ let row = 10;
 let cols = 10;
 let totalCell = row * cols;
 bomb(bombs, totalCell);
+let safeCell = totalCell - bombs.length;
 console.table(bombs);
 button.addEventListener("click", function () {
   board.classList.remove("d-none");
@@ -29,6 +30,15 @@ button.addEventListener("click", function () {
     const cell = cells[i];
     cell.addEventListener("click", function () {
       //fase 1
+      if (bombs.includes(parseInt(cell.innerText))) {
+        cell.classList.add("bomb");
+        console.log("la partita è terminata");
+        return;
+      }
+      if (score === safeCell) {
+        console.log("hai vinto!");
+        return;
+      }
       if (cell.classList.contains("active")) {
         return;
       } else {
@@ -38,10 +48,7 @@ button.addEventListener("click", function () {
         scored.innerText = score;
       }
       //fase3
-      if (bombs.includes(parseInt(cell.innerText))) {
-        cell.classList.add("bomb");
-        console.log("la partita è terminata");
-      }
     });
   }
 });
+console.log(safeCell);
