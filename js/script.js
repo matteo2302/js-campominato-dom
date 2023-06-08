@@ -1,15 +1,13 @@
 console.log("jsok");
 //functions
-const bomb = (bombs, totalCell) => {
-  while (bombs.length <= 16) {
-    do {
-      bomb = Math.floor(Math.random() * totalCell + 1);
-    } while (bombs.contain(bomb));
-    {
-      bombs.push = bomb;
+function bomb(bombs, totalCell) {
+  while (bombs.length < 16) {
+    const randomNumber = Math.floor(Math.random() * totalCell) + 1;
+    if (!bombs.includes(randomNumber)) {
+      bombs.push(randomNumber);
     }
   }
-};
+}
 //fase 0
 const board = document.querySelector(".board");
 const button = document.querySelector("button");
@@ -19,6 +17,8 @@ let score = "";
 let row = 10;
 let cols = 10;
 let totalCell = row * cols;
+bomb(bombs, totalCell);
+console.table(bombs);
 button.addEventListener("click", function () {
   board.classList.remove("d-none");
   for (i = 0; i < totalCell; i++) {
@@ -36,6 +36,10 @@ button.addEventListener("click", function () {
         console.log(cell.innerText);
         score++;
         scored.innerText = score;
+      }
+      //fase3
+      if (bombs.contain(cell.innerText)) {
+        cell.classList.add("bomb");
       }
     });
   }
