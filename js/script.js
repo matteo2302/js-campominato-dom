@@ -25,7 +25,7 @@ button.addEventListener("click", function () {
     board.innerHTML += `<div class="cell"> ${[i + 1]}</div>`;
   }
   let cells = document.querySelectorAll(".cell");
-  for (i = 0; i < cells.length; i++) {
+  for (i = 0; i < totalCell; i++) {
     const cell = cells[i];
     cell.addEventListener("click", function () {
       //fase 1
@@ -38,8 +38,9 @@ button.addEventListener("click", function () {
         scored.innerText = score;
       }
       //fase3
-      if (bombs.includes(cell.innerText)) {
+      if (bombs.includes(parseInt(cell.innerText))) {
         cell.classList.add("bomb");
+        console.log("la partita è terminata");
       }
     });
   }
