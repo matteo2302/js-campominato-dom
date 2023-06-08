@@ -16,11 +16,14 @@ button.addEventListener("click", function () {
   for (i = 0; i < cells.length; i++) {
     const cell = cells[i];
     cell.addEventListener("click", function () {
-      cell.classList.add("active");
-      console.log(cell.innerText);
-      if()
-      score++;
-      console.log(score);
+      if (cell.classList.contains("active")) {
+        return;
+      } else {
+        cell.classList.add("active");
+        console.log(cell.innerText);
+        score++;
+        console.log(score);
+      }
     });
   }
   //fase 1
