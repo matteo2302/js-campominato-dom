@@ -14,3 +14,7 @@
 **fase 3**
 
 - metto un funzione che cicla sulle sui valori di `array bombe` e se ne la casella risulta true ci aggiungiamo la classe bomb
+
+**fase 4**
+
+-
