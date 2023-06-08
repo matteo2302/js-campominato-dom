@@ -33,19 +33,21 @@ button.addEventListener("click", function () {
       if (bombs.includes(parseInt(cell.innerText))) {
         cell.classList.add("bomb");
         console.log("la partita è terminata");
+        scored.innerText = `hai perso! il tuo punteggio totale è di ${score}`;
         return;
       }
-      if (score === safeCell) {
-        console.log("hai vinto!");
-        return;
-      }
+
       if (cell.classList.contains("active")) {
         return;
       } else {
         cell.classList.add("active");
         console.log(cell.innerText);
         score++;
-        scored.innerText = score;
+      }
+      if (score === safeCell) {
+        console.log("hai vinto!");
+        scored.innerText = `hai vinto! impressionante un punteggio di ${score}`;
+        return;
       }
       //fase3
     });

@@ -17,4 +17,5 @@
 
 **fase 4**
 
--
+- dichiaro quante sono le caselle massime o quelle sicure
+- metto che al click di una casella se lo score è uguale al numero di caselle safe hai vinto
