@@ -22,3 +22,6 @@ button {
 .active {
   background-color: azure;
 }
+.title-cont {
+  width: 800px;
+}

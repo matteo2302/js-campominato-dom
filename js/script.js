@@ -2,7 +2,8 @@ console.log("jsok");
 //fase 0
 const board = document.querySelector(".board");
 const button = document.querySelector("button");
-
+const scored = document.getElementById("score");
+let score = "";
 let row = 10;
 let cols = 10;
 let totalCell = row * cols;
@@ -17,6 +18,10 @@ button.addEventListener("click", function () {
     cell.addEventListener("click", function () {
       cell.classList.add("active");
       console.log(cell.innerText);
+      if()
+      score++;
+      console.log(score);
     });
   }
+  //fase 1
 });
