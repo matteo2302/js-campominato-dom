@@ -38,7 +38,7 @@ button.addEventListener("click", function () {
         scored.innerText = score;
       }
       //fase3
-      if (bombs.contain(cell.innerText)) {
+      if (bombs.includes(cell.innerText)) {
         cell.classList.add("bomb");
       }
     });
